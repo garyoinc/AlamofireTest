@@ -13,7 +13,26 @@
 		EA032AC52494A73600058F20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA032AC42494A73600058F20 /* Assets.xcassets */; };
 		EA032AC82494A73600058F20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA032AC72494A73600058F20 /* Preview Assets.xcassets */; };
 		EA032ACB2494A73600058F20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA032AC92494A73600058F20 /* LaunchScreen.storyboard */; };
+		EAF416582494ADF70053564D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF416562494ADF70053564D /* SwiftyJSON.framework */; };
+		EAF416592494ADF70053564D /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAF416562494ADF70053564D /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EAF4165A2494ADF70053564D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF416572494ADF70053564D /* Alamofire.framework */; };
+		EAF4165B2494ADF70053564D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAF416572494ADF70053564D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EAF4165C2494ADF70053564D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EAF416592494ADF70053564D /* SwiftyJSON.framework in Embed Frameworks */,
+				EAF4165B2494ADF70053564D /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EA032ABB2494A73200058F20 /* AlamofireTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlamofireTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +43,8 @@
 		EA032AC72494A73600058F20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EA032ACA2494A73600058F20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA032ACC2494A73600058F20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAF416562494ADF70053564D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		EAF416572494ADF70053564D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAF416582494ADF70053564D /* SwiftyJSON.framework in Frameworks */,
+				EAF4165A2494ADF70053564D /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +65,7 @@
 			children = (
 				EA032ABD2494A73200058F20 /* AlamofireTest */,
 				EA032ABC2494A73200058F20 /* Products */,
+				EAF416552494ADF70053564D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +99,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		EAF416552494ADF70053564D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAF416572494ADF70053564D /* Alamofire.framework */,
+				EAF416562494ADF70053564D /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,6 +118,8 @@
 				EA032AB72494A73100058F20 /* Sources */,
 				EA032AB82494A73100058F20 /* Frameworks */,
 				EA032AB92494A73100058F20 /* Resources */,
+				EAF4165C2494ADF70053564D /* Embed Frameworks */,
+				EAF4165D2494AE0E0053564D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -140,6 +175,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EAF4165D2494AE0E0053564D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EA032AB72494A73100058F20 /* Sources */ = {
@@ -288,6 +345,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AlamofireTest/Preview Content\"";
 				DEVELOPMENT_TEAM = KTK96X9S7P;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AlamofireTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -308,6 +369,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AlamofireTest/Preview Content\"";
 				DEVELOPMENT_TEAM = KTK96X9S7P;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AlamofireTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
